@@ -1,0 +1,195 @@
+﻿<Window x:Class="WpfApp1.View.NhanVien.FormSuaThongTinNhanVien"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View.NhanVien"
+        mc:Ignorable="d"
+        Title="FormSuaThongTinNhanVien" Height="700" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+           
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{DynamicResource textblock}" Text="Thông Tin Nhân Viên" Height="40"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="15*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Grid Height="10"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Mã Nhân Viên" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding MaNV}" VerticalAlignment="Top" HorizontalAlignment="Left" IsReadOnly="True" x:Name="MaNhanVien"></TextBox>
+                </Grid>
+                <Grid Height="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="77*"/>
+                        <ColumnDefinition Width="36*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Phòng" VerticalAlignment="Center" FontSize="10"></Label>
+                    <ComboBox Grid.Column ="1" Style="{DynamicResource combobox}" ItemsSource="{Binding PhongBanComboBox, Mode=TwoWay}" SelectedItem="{Binding ChonPhongBan, Mode=TwoWay}" DisplayMemberPath="TenPB" Margin="13,0,13,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" x:Name="PhongBan" SelectedValuePath="Sua_Phong_Ban"></ComboBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Họ Tên" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}"  Text="{Binding HoTen}" HorizontalAlignment="Left" x:Name="HoTen"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="CCCD" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding CCCD}" HorizontalAlignment="Left" x:Name="CCCD"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="SDT" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}"  Text="{Binding SDT}" HorizontalAlignment="Left" x:Name="SDT"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="giới tính" VerticalAlignment="Center" FontSize="10"></Label>
+                    <ComboBox Grid.Column ="1" Style="{DynamicResource combobox}" SelectedItem="{Binding SEX}" HorizontalAlignment="Left" x:Name="SEX">
+                        <ComboBoxItem Content="Nam"></ComboBoxItem>
+                        <ComboBoxItem Content="Nu"></ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Học Vấn" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding HocVan}" HorizontalAlignment="Left" x:Name="HocVan"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Địa Chỉ" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding Adress}" HorizontalAlignment="Left" x:Name="Adress"></TextBox>
+                </Grid>
+                <Grid Height="50"></Grid>
+                <Button Style="{DynamicResource button}" Content="Hủy" Height="35" HorizontalAlignment="Right" Command="{Binding CloseFormSuaNhanVien}"></Button>
+
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="2">
+                <Grid Height="10"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Ngày Ký Hợp Đồng" VerticalAlignment="Center" FontSize="10"></Label>
+                    <DatePicker Grid.Column ="1" Width="180" SelectedDate="{Binding NgayKyHopDong}" HorizontalAlignment="Left" x:Name="NgayKy"></DatePicker>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Ngày Kết Thúc" VerticalAlignment="Center" FontSize="10"></Label>
+                    <DatePicker Grid.Column ="1" Width="180" SelectedDate="{Binding NgayKetThucHopDong}" HorizontalAlignment="Left" x:Name="NgayHet"></DatePicker>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Email" VerticalAlignment="Bottom" FontSize="10" Margin="0,0,0,8"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding Email}" HorizontalAlignment="Left" x:Name="Email"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Tuổi" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding Age}" HorizontalAlignment="Left" x:Name="Age"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Ghi Chú" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding Note}" HorizontalAlignment="Left" x:Name="Note"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Loại Hợp Đồng" VerticalAlignment="Center" FontSize="10"></Label>
+                    <TextBox Grid.Column ="1" Style="{DynamicResource textbox}" Text="{Binding LoaiHopDong}" HorizontalAlignment="Left" x:Name="LoaiHopDong"></TextBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Bộ Phận" VerticalAlignment="Center" FontSize="10"></Label>
+                    <ComboBox Grid.Column ="1" Style="{DynamicResource combobox}" ItemsSource="{Binding BoPhanComboBox, Mode=TwoWay}" SelectedItem="{Binding ChonBoPhan, Mode=TwoWay}" DisplayMemberPath="TenBP" HorizontalAlignment="Left" x:Name="bophan" SelectedValuePath="Sua_Bo_Phan"></ComboBox>
+                </Grid>
+                <Grid Height="20"></Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="Mã Lương" VerticalAlignment="Center" FontSize="10"></Label>
+                    <ComboBox Grid.Column ="1" Style="{DynamicResource combobox}" SelectedItem="{Binding MaLuong}" HorizontalAlignment="Left" x:Name="maLuong"></ComboBox>
+                </Grid>
+                <Grid Height="83"></Grid>
+                <Button Style="{DynamicResource button}" Content="Sửa" Height="35" HorizontalAlignment="Left" Command="{Binding SuaNhanVien}" x:Name="Sua_NhanVien"></Button>
+
+            </StackPanel>
+        </Grid>
+
+
+
+
+
+    </Grid>
+</Window>

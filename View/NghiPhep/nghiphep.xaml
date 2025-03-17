@@ -1,0 +1,118 @@
+﻿<Page x:Class="WpfApp1.View.NghiPhep.nghiphep"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.View.NghiPhep"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="nghiphep">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Đăng Ký Nghỉ Phép" Style="{DynamicResource textblock}"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Nhân Viên" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                    <ComboBox Style="{StaticResource combobox}" Grid.Column="1" HorizontalAlignment="Stretch"></ComboBox>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Họ Tên" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                    <TextBox Style="{StaticResource textbox}" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Lý Do" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                    <TextBox Style="{StaticResource textbox}" Grid.Column="1" HorizontalAlignment="Stretch"></TextBox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Từ Ngày" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                    <DatePicker Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="180"></DatePicker>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Ngày Kết Thúc" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                    <DatePicker Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Width="180"></DatePicker>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Trạng Thái" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+                    <ComboBox Grid.Column="1" Style="{DynamicResource combobox}">
+                        <ComboBoxItem Content="Đã Duyệt"></ComboBoxItem>
+                        <ComboBoxItem Content="Chưa Duyệt"></ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Grid Width="10"></Grid>
+            <Button Style="{DynamicResource button}" Content="Đăng Ký"></Button>
+            <Grid Width="10"></Grid>
+            <Button Style="{DynamicResource button}" Content="Xóa Đăng Ký"></Button>
+            <Grid Width="10"></Grid>
+            <Button Style="{DynamicResource button}" Content="Sửa Đăng Kỹ"></Button>
+            <Grid Width="10"></Grid>
+            <Button Style="{DynamicResource button}" Content="Làm Mới"></Button>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <ListView>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Mã NP"></GridViewColumn>
+                        <GridViewColumn Header="Mã Nhân Viên"></GridViewColumn>
+                        <GridViewColumn Header="Họ Tên"></GridViewColumn>
+                        <GridViewColumn Header="Lý Do"></GridViewColumn>
+                        <GridViewColumn Header="Từ Ngày"></GridViewColumn>
+                        <GridViewColumn Header="Đến Ngày"></GridViewColumn>
+                        <GridViewColumn Header="Trạng Thái"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

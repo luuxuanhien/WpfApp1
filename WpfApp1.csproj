@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="hinhanh\datmon.png" />
+    <None Remove="hinhanh\download.png" />
+    <None Remove="hinhanh\png-clipart-padlock-logo-computer-icons-padlock-technic-logo.png" />
+    <None Remove="hinhanh\Sample_User_Icon.png" />
+    <None Remove="hinhanh\tăng khả năng sáng tạo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.104.2" />
+    <PackageReference Include="EPPlus" Version="7.6.1" />
+    <PackageReference Include="MaterialDesignColors" Version="5.2.1" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.2.1" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="hinhanh\datmon.png" />
+    <Resource Include="hinhanh\download.png" />
+    <Resource Include="hinhanh\png-clipart-padlock-logo-computer-icons-padlock-technic-logo.png" />
+    <Resource Include="hinhanh\Sample_User_Icon.png" />
+    <Resource Include="hinhanh\tăng khả năng sáng tạo.png" />
+  </ItemGroup>
+
+</Project>

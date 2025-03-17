@@ -1,0 +1,110 @@
+﻿<Page x:Class="WpfApp1.View.ChamCong.khenthuongkyluat"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.View.ChamCong"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="khenthuongkyluat">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Thông Tin Khen Thưởng" Style="{DynamicResource textblock}"></TextBlock>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" >
+                <Grid>
+                    <Label Content="Mã Thưởng" VerticalAlignment="Center"></Label>
+                    <TextBox Style="{DynamicResource textbox}"></TextBox>
+                </Grid>
+                <Grid Height="5"></Grid>
+                <Grid>
+                    <Label Content="Tiền Thưởng" VerticalAlignment="Center"></Label>
+                    <TextBox Style="{DynamicResource textbox}"></TextBox>
+                </Grid>
+                <Grid Height="5"></Grid>
+                <Grid>
+                    <Label Content="Lý do" VerticalAlignment="Center"></Label>
+                    <TextBox Style="{DynamicResource textbox}"></TextBox>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Grid Width="10"></Grid>
+                <Button Content="Mới" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+                <Grid Width="10"></Grid>
+                <Button Content="Thêm" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+                <Grid Width="10"></Grid>
+                <Button Content="Xóa" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+                <Grid Width="10"></Grid>
+                <Button Content="Sửa" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+            </StackPanel>
+            <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <ListView>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Mã Khen Thưởng" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="Tiền" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="Lý Do" Width="150"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="3*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="4*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Thông Tin Kỷ Luật" Style="{DynamicResource textblock}"></TextBlock>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" >
+                <Grid>
+                    <Label Content="Mã Kỷ Luật" VerticalAlignment="Center"></Label>
+                    <TextBox Style="{DynamicResource textbox}"></TextBox>
+                </Grid>
+                <Grid Height="5"></Grid>
+                <Grid>
+                    <Label Content="Tiền Kỷ Luật" VerticalAlignment="Center"></Label>
+                    <TextBox Style="{DynamicResource textbox}"></TextBox>
+                </Grid>
+                <Grid Height="5"></Grid>
+                <Grid>
+                    <Label Content="Lý do" VerticalAlignment="Center"></Label>
+                    <TextBox Style="{DynamicResource textbox}"></TextBox>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Grid Width="10"></Grid>
+                <Button Content="Mới" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+                <Grid Width="10"></Grid>
+                <Button Content="Thêm" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+                <Grid Width="10"></Grid>
+                <Button Content="Xóa" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+                <Grid Width="10"></Grid>
+                <Button Content="Sửa" Style="{DynamicResource button}" Height="30" Width="80" FontSize="15"></Button>
+            </StackPanel>
+            <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <ListView>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Mã Kỷ Luật" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="Tiền" Width="150"></GridViewColumn>
+                            <GridViewColumn Header="Lý Do" Width="150"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+</Page>

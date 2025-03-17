@@ -1,0 +1,51 @@
+﻿<Page x:Class="WpfApp1.View.NhanVien.QuanLyCheDo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.View.NhanVien"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="QuanLyCheDo">
+    
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Quản Lý Bảo Hiểm" Style="{DynamicResource textblock}"></TextBlock>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Grid Width="20"></Grid>
+            <Button Content="Thêm Bảo Hiểm" Style="{StaticResource button }" Width="150" Height="40" FontSize="15" Command="{Binding Them_Bao_Hiem}"></Button>
+            <Grid Width="40"></Grid>
+            <Button Content="Xóa Bảo Hiểm" Style="{StaticResource button }" Width="150" Height="40" FontSize="15" Command="{Binding XoaBaoHiem}"></Button>
+            <Grid Width="40"></Grid>
+            <Button Content="Sửa Bảo Hiểm" Style="{StaticResource button }" Width="150" Height="40" FontSize="15" Command="{Binding Sua_Bao_Hiem}"></Button>
+            <Grid Width="40"></Grid>
+            <Button Content="Xem Chi Tiết" Style="{StaticResource button }" Width="150" Height="40" FontSize="15" Command="{Binding XemChiTietBH}"></Button>
+        </StackPanel>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <ListView ItemsSource="{Binding ThemBHListView}" SelectedItem="{Binding ChonBH}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Mã Bảo Hiểm" Width="150" DisplayMemberBinding="{Binding MaBH}"></GridViewColumn>
+
+                        <GridViewColumn Header="Mã Nhân Viên" Width="150" DisplayMemberBinding="{Binding MaNV}"></GridViewColumn>
+
+                        <GridViewColumn Header="Ngày Cấp Số" Width="150" DisplayMemberBinding="{Binding NgayCap}"></GridViewColumn>
+
+                        <GridViewColumn Header="Nơi Cấp Số" Width="150" DisplayMemberBinding="{Binding NoiCap}"></GridViewColumn>
+
+                        <GridViewColumn Header="Ghi Chú" Width="150" DisplayMemberBinding="{Binding GhiChu}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
+        <TextBlock Background="#00CED1" Grid.Row="4"></TextBlock>
+        
+    </Grid>
+</Page>

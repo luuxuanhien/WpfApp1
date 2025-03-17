@@ -1,0 +1,69 @@
+﻿<Window x:Class="WpfApp1.View.NhanVien.FormChiTietBaoHiem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.View.NhanVien"
+        mc:Ignorable="d"
+        Title="FormChiTietBaoHiem" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Thông Tin Bảo Hiểm" Style="{DynamicResource textblock}"></TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Mã Nhân Viên   " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <TextBox IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="0 0 0 2" BorderBrush="Black" Grid.Column="1" Height="40" Width="500" x:Name="MaNhanVien" Text="{Binding MaNV}"></TextBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Họ Tên   " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <TextBox IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="0 0 0 2" BorderBrush="Black" Grid.Column="1" Height="40" Width="500" x:Name="HoTen" Text="{Binding HoTenBH}"></TextBox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Mã Bảo Hiểm   " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <TextBox IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="0 0 0 2" BorderBrush="Black" Grid.Column="1" Height="40" Width="500" x:Name="MaBaoHiem" Text="{Binding MaBH}"></TextBox>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Ngày Cấp   " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <DatePicker VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="0 0 0 2" BorderBrush="Black" Grid.Column="1" Height="40" Width="500" x:Name="NgayCap" SelectedDate="{Binding NgayCapBH}"></DatePicker>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Nơi Cấp   " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <TextBox IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="0 0 0 2" BorderBrush="Black" Grid.Column="1" Height="40" Width="500" x:Name="NoiCap" Text="{Binding NoiCapBH}"></TextBox>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Ghi Chú   " FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right"></Label>
+            <TextBox IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="0 0 0 2" BorderBrush="Black" Grid.Column="1" Height="40" Width="500" x:Name="GhiChu" Text="{Binding GhiChuBH}"></TextBox>
+        </Grid>
+    </Grid>
+</Window>
